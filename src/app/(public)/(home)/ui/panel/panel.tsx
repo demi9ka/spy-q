@@ -1,5 +1,6 @@
 import { Container } from '@/shared/ui/container'
 import { SearchCategory } from './ui/search-category'
+import { Form } from './ui/form/form'
 
 export const Panel = () => {
   return (
@@ -24,6 +25,7 @@ export const Panel = () => {
         </div>
         <SearchCategory />
       </div>
+      <Form />
     </Container>
   )
 }

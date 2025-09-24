@@ -1,0 +1,1 @@
+export { Mailings } from './mailings'

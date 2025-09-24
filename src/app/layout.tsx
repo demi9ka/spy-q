@@ -1,10 +1,16 @@
 import type { Metadata } from 'next'
-import { Montserrat } from 'next/font/google'
+import { Inter, Montserrat } from 'next/font/google'
 import { Header } from '@/shared/ui/header'
 import { Footer } from '@/shared/ui/footer'
 import { Provider } from './provider'
 import './globals.css'
 
+const inter = Inter({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400'],
+  variable: '--font-inter',
+  display: 'swap'
+})
 const montserrat = Montserrat({
   subsets: ['latin', 'cyrillic'],
   weight: ['400', '500', '600', '700'],
@@ -23,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ru'>
-      <body className={`${montserrat.className} bg-[var(--bg)] flex flex-col min-h-[100svh]`}>
+      <body className={` ${inter.className} ${montserrat.className}   bg-[var(--bg)] flex flex-col min-h-[100svh]`}>
         <Provider>
           <Header />
           {children}
