@@ -14,7 +14,7 @@ export const City = () => {
       py-[13.5px] md:py-[6.5px] lg:py-[8.3px] xl:py-[10.3px] 2xl:py-[13.5px] 
       px-[16.0px] md:px-[7.7px] lg:px-[9.8px] xl:px-[12.3px] 2xl:px-[16.0px]
        rounded-[16.0px] md:rounded-[7.7px] lg:rounded-[9.8px] xl:rounded-[12.3px] 2xl:rounded-[16.0px]
-       gap-[4.0px] md:gap-[1.9px] lg:gap-[2.5px] xl:gap-[3.1px] 2xl:gap-[4.0px]'
+       gap-[8.0px] md:gap-[3.8px] lg:gap-[4.9px] xl:gap-[6.1px] 2xl:gap-[8.0px]'
       >
         <MapPin className='text-accent size-[24.0px] md:size-[11.5px] lg:size-[14.7px] xl:size-[18.4px] 2xl:size-[24.0px]' />
         <input

@@ -3,7 +3,7 @@ import { Textarea } from './ui/textarea'
 
 export const Fields = () => {
   return (
-    <Container>
+    <Container className='flex flex-col'>
       <h5 className=' mb-[12.0px] md:mb-[5.8px] lg:mb-[7.4px] xl:mb-[9.2px] 2xl:mb-[12.0px] font-semibold text-[18.0px] md:text-[8.6px] lg:text-[11.0px] xl:text-[13.8px] 2xl:text-[18.0px]'>
         Ваше предложение <span className='text-accent'>*</span>
       </h5>
