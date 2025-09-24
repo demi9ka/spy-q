@@ -5,11 +5,11 @@ import { Welcome } from './ui/welcome/welcome'
 
 export default () => {
   return (
-    <main className='flex-grow flex-shrink-0 basis-auto'>
+    <>
       <Welcome />
       <Panel />
       <HowWork />
       <Questions />
-    </main>
+    </>
   )
 }

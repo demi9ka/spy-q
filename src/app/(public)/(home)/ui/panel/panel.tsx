@@ -1,10 +1,10 @@
-import { Container } from '@/shared/ui/container'
+import { Section } from '@/shared/ui/section'
 import { SearchCategory } from './ui/search-category'
 import { Form } from './ui/form/form'
 
 export const Panel = () => {
   return (
-    <Container
+    <Section
       id='panel'
       className='max-w-[1640px] scroll-mt-30 mt-[24px] md:mt-[20.2px] lg:mt-[25.8px] xl:mt-[32.2px] 2xl:mt-[42px]'
     >
@@ -26,6 +26,6 @@ export const Panel = () => {
         <SearchCategory />
       </div>
       <Form />
-    </Container>
+    </Section>
   )
 }

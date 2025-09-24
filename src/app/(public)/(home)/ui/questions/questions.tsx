@@ -1,10 +1,11 @@
-import { Container } from '@/shared/ui/container'
+import { Section } from '@/shared/ui/section'
 import { Question } from './ui/question'
 import { DATA } from './constants'
 
 export const Questions = () => {
   return (
-    <Container
+    <Section
+      id='FAQ'
       className='
         mt-[32px] md:mt-[34.6px] lg:mt-[42.2px] xl:mt-[48.0px] 2xl:mt-[72px]
         mb-[24px] md:mb-[24.0px] lg:mb-[29.3px] xl:mb-[33.3px] 2xl:mb-[50px]
@@ -33,6 +34,6 @@ export const Questions = () => {
           <Question answer={answer} question={question} id={i} key={i} />
         ))}
       </div>
-    </Container>
+    </Section>
   )
 }

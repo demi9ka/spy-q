@@ -1,6 +1,6 @@
 'use client'
 
-import { Container } from '../container'
+import { Container } from '@/shared/ui/container'
 import { Slider } from '@/components/ui/slider'
 
 export const Mailings = () => {

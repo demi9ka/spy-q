@@ -1,9 +1,10 @@
-import { Container } from '../container'
+import Link from 'next/link'
+import { Section } from '@/shared/ui/section'
 
 export const Header = () => {
   return (
-    <header className='fixed top-0 left-0 w-full bg-[var(--accent)]/80 backdrop-blur-[4px]  text-[var(--light)]'>
-      <Container className='py-4 md:py-[8px] lg:py-[10.6px] xl:py-[13.3px] 2xl:py-5 max-w-[1640px]'>
+    <header className='fixed z-30 top-0 left-0 w-full bg-[var(--accent)]  text-[var(--light)]'>
+      <Section className='py-4 md:py-[8px] lg:py-[10.6px] xl:py-[13.3px] 2xl:py-5 max-w-[1640px]'>
         <div className='flex justify-between items-center'>
           <div className='flex items-center'>
             <h2
@@ -12,8 +13,13 @@ export const Header = () => {
               SpyQ
             </h2>
             <div className='hidden md:flex items-center  gap-5 lg:gap-7 xl:gap-8 2xl:gap-13 font-medium text-lg md:text-[9.6px] lg:text-[12.8px] xl:text-lg 2xl:text-2xl'>
-              <p>Категории</p>
-              <p>FAQ</p>
+              <Link href='/#panel' scroll={true}>
+                Категории
+              </Link>
+              <Link href='/#FAQ' scroll={true}>
+                FAQ
+              </Link>
+              <Link href='/privacy'>Политика конфиденциальности</Link>
             </div>
           </div>
           <div className='flex items-center'>
@@ -22,7 +28,7 @@ export const Header = () => {
             </button>
           </div>
         </div>
-      </Container>
+      </Section>
     </header>
   )
 }

@@ -1,10 +1,10 @@
-import { Container } from '@/shared/ui/container'
+import { Section } from '@/shared/ui/section'
 import { Block } from './ui/block'
 import { DATA } from './constants'
 
 export const HowWork = () => {
   return (
-    <Container
+    <Section
       id='how-work'
       className='
         mt-[32px] md:mt-[34.6px] lg:mt-[42.2px] xl:mt-[48.0px] 2xl:mt-[72px]
@@ -25,6 +25,6 @@ export const HowWork = () => {
           <Block key={i} title={title} content={content} className={`${i == 2 ? 'bg-accent text-white' : ''}`} />
         ))}
       </div>
-    </Container>
+    </Section>
   )
 }

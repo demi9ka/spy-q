@@ -1,4 +1,4 @@
-import { Container } from '../container'
+import { Container } from '@/shared/ui/container'
 import { Textarea } from './ui/textarea'
 
 export const Fields = () => {

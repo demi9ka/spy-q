@@ -32,7 +32,7 @@ export default function RootLayout({
       <body className={` ${inter.className} ${montserrat.className}   bg-[var(--bg)] flex flex-col min-h-[100svh]`}>
         <Provider>
           <Header />
-          {children}
+          <main className='flex-grow flex-shrink-0 basis-auto '>{children}</main>
           <Footer />
         </Provider>
       </body>

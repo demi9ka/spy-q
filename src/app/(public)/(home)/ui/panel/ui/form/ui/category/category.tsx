@@ -1,6 +1,6 @@
 'use client'
 
-import { Container } from '../container'
+import { Container } from '@/shared/ui/container'
 import { category } from './constants'
 import { CategoryItem } from './ui/category-item'
 

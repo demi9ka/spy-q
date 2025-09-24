@@ -1,11 +1,11 @@
-import { Container } from '@/shared/ui/container'
+import { Section } from '@/shared/ui/section'
 import Image from 'next/image'
 import { ButtonContainer } from './ui/buttons-container'
 
 export const Welcome = () => {
   return (
     <div className='pt-41 md:pt-19 pb-33 md:pb-14  bg-accent text-[var(--light)]'>
-      <Container className='max-w-[1640px]'>
+      <Section className='max-w-[1640px]'>
         <div className='flex justify-center  items-center'>
           <div>
             <h1
@@ -35,7 +35,7 @@ export const Welcome = () => {
          h-[0px] md:h-[394.1px] lg:h-[481.7px] xl:h-[547.3px] 2xl:h-[821px]'
           />
         </div>
-      </Container>
+      </Section>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { Container } from '../container'
+import { Container } from '@/shared/ui/container'
 import { MapPin } from 'lucide-react'
 
 export const City = () => {
