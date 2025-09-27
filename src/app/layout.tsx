@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ru'>
-      <body className={` ${inter.className} ${montserrat.className}   bg-[var(--bg)] flex flex-col min-h-[100svh]`}>
+      <body className={` ${inter.className} ${montserrat.className} bg-[var(--bg))] flex flex-col min-h-[100svh]`}>
         <Provider>
           <Header />
           <main className='flex-grow flex-shrink-0 basis-auto '>{children}</main>

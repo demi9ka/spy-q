@@ -2,7 +2,7 @@ import { Section } from '../section'
 
 export const Footer = () => {
   return (
-    <footer className='shrink-0 w-full bg-white'>
+    <footer className='shrink-0 w-full bg-white relative z-[2]'>
       <Section className='py-4 md:py-[8px] lg:py-[10.6px] xl:py-[13.3px] 2xl:py-5 max-w-[1640px]'>
         <div className='flex justify-between  items-center flex-col md:flex-row gap-6 md:gap-0'>
           <h2

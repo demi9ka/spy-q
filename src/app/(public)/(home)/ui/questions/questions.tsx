@@ -7,8 +7,8 @@ export const Questions = () => {
     <Section
       id='FAQ'
       className='
-        mt-[32px] md:mt-[34.6px] lg:mt-[42.2px] xl:mt-[48.0px] 2xl:mt-[72px]
-        mb-[24px] md:mb-[24.0px] lg:mb-[29.3px] xl:mb-[33.3px] 2xl:mb-[50px]
+       pt-[32.0px] md:pt-[34.6px] lg:pt-[44.2px] xl:pt-[55.2px] 2xl:pt-[72.0px]
+       pb-[24.0px] md:pb-[24.0px] lg:pb-[30.7px] xl:pb-[38.3px] 2xl:pb-[50.0px]
         w-full md:w-[528.0px] lg:w-[645.3px] xl:w-[733.3px] 2xl:w-[1100px]
         '
     >
