@@ -1,4 +1,4 @@
-export type SubCategoryType = {
+export type SubCategoriesType = {
   id: string
   name: string
   count: number
@@ -8,5 +8,5 @@ export type CategoryType = {
   id: string
   name: string
   count: number
-  subCategory: SubCategoryType[]
+  subCategories: SubCategoriesType[]
 }

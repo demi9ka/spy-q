@@ -1,8 +1,12 @@
 'use client'
 
+import { panelFormStore } from '@/store/panel-form.store'
 import { Search } from 'lucide-react'
+import { observer } from 'mobx-react-lite'
 
-export const SearchCategory = () => {
+export const SearchCategory = observer(() => {
+  const { search, setSearch } = panelFormStore
+
   return (
     <h3
       className='bg-white shadow flex  items-center
@@ -17,6 +21,8 @@ export const SearchCategory = () => {
       w-[24px] md:w-[11.5px] lg:w-[14.7px] xl:w-[18.4px] 2xl:w-[24px]'
       />
       <input
+        value={search}
+        onChange={e => setSearch(e.target.value)}
         type='text'
         placeholder='Поиск по категориям'
         className='
@@ -28,4 +34,4 @@ export const SearchCategory = () => {
       />
     </h3>
   )
-}
+})

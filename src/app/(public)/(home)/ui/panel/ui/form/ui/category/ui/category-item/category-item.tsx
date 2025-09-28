@@ -6,14 +6,14 @@ import { SubCategory } from './ui/sub-category'
 
 type Props = CategoryType
 
-export const CategoryItem = ({ count, id, name, subCategory }: Props) => {
+export const CategoryItem = ({ count, id, name, subCategories }: Props) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleOpen = () => {
     setIsOpen(!isOpen)
   }
 
-  const mappedSubCategory = useMemo(() => subCategory.map(el => <SubCategory {...el} />), [])
+  const mappedSubCategory = useMemo(() => subCategories.map(el => <SubCategory key={el.id} {...el} />), [])
 
   return (
     <div className='break-inside-avoid border-b mb-[22.0px] md:mb-[10.6px] lg:mb-[13.5px] xl:mb-[16.9px] 2xl:mb-[22.0px]'>

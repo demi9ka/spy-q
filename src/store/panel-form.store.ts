@@ -1,6 +1,8 @@
 import { makeAutoObservable } from 'mobx'
 
 class PanelFormStore {
+  public search = ''
+
   proposal = ''
   contact = ''
   mailingCount = 1000
@@ -9,7 +11,11 @@ class PanelFormStore {
   constructor() {
     makeAutoObservable(this)
   }
+
+  setSearch = (value: string) => {
+    this.search = value
+  }
 }
 
 // Создаем экземпляр и экспортируем
-export const counterStore = new PanelFormStore()
+export const panelFormStore = new PanelFormStore()
