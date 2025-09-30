@@ -13,8 +13,7 @@ export const Block = ({ content, title, className }: Props) => {
     >
       <h5
         className='font-semibold
-         text-[18px] md:text-[11.5px] lg:text-[14.7px] xl:text-[17.6px] 2xl:text-[24px]
-          '
+        text-[20.0px] md:text-[12.5px] lg:text-[15.9px] xl:text-[19.9px] 2xl:text-[26.0px]'
       >
         {title}
       </h5>
@@ -22,10 +21,9 @@ export const Block = ({ content, title, className }: Props) => {
         style={{ lineHeight: '130%' }}
         className=' 
           mt-[16px] md:mt-[7.7px] lg:mt-[9.8px] xl:mt-[11.7px] 2xl:mt-[16px]
-         text-[14px] md:text-[8.6px] lg:text-[11.0px] xl:text-[13.2px] 2xl:text-[18px]'
-      >
-        {content}
-      </p>
+       text-[16.0px] md:text-[9.6px] lg:text-[12.3px] xl:text-[15.3px] 2xl:text-[20.0px]'
+        dangerouslySetInnerHTML={{ __html: content }}
+      ></p>
     </div>
   )
 }

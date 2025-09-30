@@ -1,3 +1,5 @@
+'use client'
+
 import { Category } from './ui/category'
 import { City } from './ui/city'
 import { Fields } from './ui/fields'
@@ -15,7 +17,6 @@ export const Form = () => {
       >
         <Fields />
         <Mailings />
-
         <div className='h-full flex flex-col gap-[16.0px] md:gap-[7.7px] lg:gap-[9.8px] xl:gap-[12.3px] 2xl:gap-[16.0px]'>
           <City />
           <Status />

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { toast } from 'sonner'
-import category from './category'
+import panel from './panel'
 
 export const api = axios.create({
   baseURL: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/api' : 'https://spy-q.net/api'
@@ -13,12 +13,12 @@ api.interceptors.response.use(
   error => {
     if (error.response) {
       const { status, data } = error.response
-      toast(`${status}, ${data}`)
+      toast(`${status}, ${data.message}`)
     }
     return Promise.reject(error)
   }
 )
 
 export default {
-  category
+  panel
 }

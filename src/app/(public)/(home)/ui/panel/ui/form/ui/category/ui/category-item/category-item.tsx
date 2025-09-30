@@ -3,15 +3,23 @@ import { CategoryType } from '@/type'
 import { ChevronUp } from 'lucide-react'
 import { Checkbox } from '@/components/ui/checkbox'
 import { SubCategory } from './ui/sub-category'
+import { observer } from 'mobx-react-lite'
+import { panelFormStore } from '@/store/panel-form.store'
 
 type Props = CategoryType
 
-export const CategoryItem = ({ count, id, name, subCategories }: Props) => {
+export const CategoryItem = observer(({ count, id, name, subCategories }: Props) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleOpen = () => {
     setIsOpen(!isOpen)
   }
+
+  const {
+    formData: { category },
+    setValue
+  } = panelFormStore
+  const isSelected = subCategories.every(el => category.includes(el.id))
 
   const mappedSubCategory = useMemo(() => subCategories.map(el => <SubCategory key={el.id} {...el} />), [])
 
@@ -34,8 +42,16 @@ export const CategoryItem = ({ count, id, name, subCategories }: Props) => {
           />
         </div>
         <Checkbox
+          checked={isSelected}
           onCheckedChange={state => {
-            console.log(state)
+            const categoryIds = subCategories.map(el => el.id)
+            if (state === true) setValue('category', category.concat(categoryIds))
+            else {
+              setValue(
+                'category',
+                category.filter(el => !categoryIds.includes(el))
+              )
+            }
           }}
         />
       </div>
@@ -43,4 +59,4 @@ export const CategoryItem = ({ count, id, name, subCategories }: Props) => {
       {isOpen && mappedSubCategory}
     </div>
   )
-}
+})
