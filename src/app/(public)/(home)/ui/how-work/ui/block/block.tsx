@@ -1,10 +1,12 @@
+import { ReactNode } from 'react'
+
 type Props = {
   title: string
-  content: string
+  children: ReactNode
   className?: string
 }
 
-export const Block = ({ content, title, className }: Props) => {
+export const Block = ({ children, title, className }: Props) => {
   return (
     <div
       className={`w-full bg-[var(--container)]  shadow
@@ -17,13 +19,13 @@ export const Block = ({ content, title, className }: Props) => {
       >
         {title}
       </h5>
-      <p
+      <div
         style={{ lineHeight: '130%' }}
-        className=' 
-          mt-[16px] md:mt-[7.7px] lg:mt-[9.8px] xl:mt-[11.7px] 2xl:mt-[16px]
+        className='  mt-[16px] md:mt-[7.7px] lg:mt-[9.8px] xl:mt-[11.7px] 2xl:mt-[16px]
        text-[16.0px] md:text-[9.6px] lg:text-[12.3px] xl:text-[15.3px] 2xl:text-[20.0px]'
-        dangerouslySetInnerHTML={{ __html: content }}
-      ></p>
+      >
+        {children}
+      </div>
     </div>
   )
 }
