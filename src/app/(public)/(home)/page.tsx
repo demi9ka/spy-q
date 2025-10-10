@@ -1,7 +1,14 @@
+import { Metadata } from 'next'
 import { HowWork } from './ui/how-work/how-work'
+import { Modals } from './ui/modals'
 import { Panel } from './ui/panel'
 import { Questions } from './ui/questions/questions'
 import { Welcome } from './ui/welcome/welcome'
+
+export const metadata: Metadata = {
+  title: 'SpyQ',
+  description: 'Описание'
+}
 
 export default () => {
   return (
@@ -15,6 +22,7 @@ export default () => {
         <HowWork />
         <Questions />
       </div>
+      <Modals />
     </>
   )
 }

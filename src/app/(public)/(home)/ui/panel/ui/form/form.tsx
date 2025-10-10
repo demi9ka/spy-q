@@ -1,12 +1,18 @@
 'use client'
 
+import { useEffect } from 'react'
 import { Category } from './ui/category'
 import { City } from './ui/city'
 import { Fields } from './ui/fields'
 import { Mailings } from './ui/mailings'
 import { Status } from './ui/status'
+import restore from '@/lib/restore'
 
 export const Form = () => {
+  useEffect(() => {
+    restore()
+  }, [])
+
   return (
     <div className='mt-[32.0px] md:mt-[17.3px] lg:mt-[22.1px] xl:mt-[27.6px] 2xl:mt-[36.0px]'>
       <Category />

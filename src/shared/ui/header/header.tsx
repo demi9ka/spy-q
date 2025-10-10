@@ -9,7 +9,7 @@ export const Header = () => {
           <div className='flex items-center'>
             <NavbarMobile />
             <h2
-              className={`text-2xl md:text-[12.8px] lg:text-[17px] xl:text-[24.3px] 2xl:text-[32px] font-bold mr-16 md:mr-[40px] lg:mr-[53px] xl:mr-[66px] 2xl:mr-25`}
+              className={`text-[24.0px] md:text-[15.4px] lg:text-[19.6px] xl:text-[24.5px] 2xl:text-[32.0px] font-bold mr-16 md:mr-[40px] lg:mr-[53px] xl:mr-[66px] 2xl:mr-25`}
             >
               SpyQ
             </h2>

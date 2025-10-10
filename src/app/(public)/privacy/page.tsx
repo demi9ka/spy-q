@@ -2,6 +2,12 @@ import { Section } from '@/shared/ui/section'
 import { PageUrl } from './ui/page-url'
 import { Back } from './ui/back'
 import { Container } from '@/shared/ui/container'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'SpyQ - Политика ',
+  description: 'description'
+}
 
 export default () => {
   return (

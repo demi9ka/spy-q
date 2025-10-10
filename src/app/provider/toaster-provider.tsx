@@ -3,5 +3,11 @@
 import { Toaster as ToasterComponent } from 'sonner'
 
 export const Toaster = () => {
-  return <ToasterComponent theme={document.documentElement.className as any} />
+  return (
+    <ToasterComponent
+      toastOptions={{
+        style: { border: '2px solid var(--accent)', backgroundColor: 'var(--bg)' }
+      }}
+    />
+  )
 }
