@@ -5,7 +5,7 @@ import payment from './payment'
 import mailing from './mailing'
 
 export const api = axios.create({
-  baseURL: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/api' : 'https://spy-q.net/api'
+  baseURL: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/api' : 'https://spyq.net/api'
 })
 
 api.interceptors.response.use(
