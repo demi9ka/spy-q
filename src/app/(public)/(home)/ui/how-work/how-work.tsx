@@ -9,7 +9,7 @@ export const HowWork = () => {
         mt-[32px] md:mt-[34.6px] lg:mt-[42.2px] xl:mt-[48.0px] 2xl:mt-[72px]
         mb-[24px] md:mb-[24.0px] lg:mb-[29.3px] xl:mb-[33.3px] 2xl:mb-[50px]
         w-full md:w-[528.0px] lg:w-[645.3px] xl:w-[733.3px] 2xl:w-[1100px]
-         scroll-mt-30
+         scroll-mt-40
         '
     >
       <h3 className='text-center font-semibold text-[24px] md:text-[18.2px] lg:text-[22.3px] xl:text-[25.3px] 2xl:text-[38px]'>

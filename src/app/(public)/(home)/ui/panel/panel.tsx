@@ -6,7 +6,7 @@ export const Panel = () => {
   return (
     <Section
       id='panel'
-      className='max-w-[1640px] scroll-mt-30mt-[24.0px] md:mt-[28.8px] lg:mt-[36.8px] xl:mt-[46.0px] 2xl:mt-[60.0px]'
+      className='max-w-[1640px] scroll-mt-30 mt-[24.0px] md:mt-[28.8px] lg:mt-[36.8px] xl:mt-[46.0px] 2xl:mt-[60.0px]'
     >
       <div className='flex-col md:flex-row flex md:items-end justify-between'>
         <div>
