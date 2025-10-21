@@ -10,6 +10,7 @@ export const Questions = () => {
        pt-[32.0px] md:pt-[34.6px] lg:pt-[44.2px] xl:pt-[55.2px] 2xl:pt-[72.0px]
        pb-[24.0px] md:pb-[24.0px] lg:pb-[30.7px] xl:pb-[38.3px] 2xl:pb-[50.0px]
         w-full md:w-[528.0px] lg:w-[645.3px] xl:w-[733.3px] 2xl:w-[1100px]
+        scroll-mt-20
         '
     >
       <h3

@@ -23,7 +23,7 @@ export const Mailings = observer(() => {
     <Container className='flex flex-col'>
       <div className='flex items-center justify-between  mb-[12.0px] md:mb-[5.8px] lg:mb-[7.4px] xl:mb-[9.2px] 2xl:mb-[12.0px]'>
         <h5 className=' font-semibold text-[18.0px] md:text-[8.6px] lg:text-[11.0px] xl:text-[13.8px] 2xl:text-[18.0px]'>
-          Объём рассылок: {mailingCount}
+          Целевые площадки: {mailingCount}
         </h5>
         <div className='flex items-center gap-[12.0px] md:gap-[5.8px] lg:gap-[7.4px] xl:gap-[9.2px] 2xl:gap-[12.0px]'>
           {isDiscount && (
