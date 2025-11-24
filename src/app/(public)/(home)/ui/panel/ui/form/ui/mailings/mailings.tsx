@@ -12,8 +12,8 @@ export const Mailings = observer(() => {
     setValue
   } = panelFormStore
 
-  const isDiscount = mailingCount > 1000
-  const volumePrice = mailingCount / 10
+  const volumePrice = (mailingCount * (category.length > 0 ? (category.length - 1) / 2 + 1 : 0)) / 10
+  const isDiscount = volumePrice > 0 && mailingCount > 1000
   const volumePriceDiscount = volumePrice * 0.9
   const categoryPrice = category.length * 2
 

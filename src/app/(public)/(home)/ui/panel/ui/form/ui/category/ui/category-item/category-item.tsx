@@ -1,26 +1,48 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { CategoryType } from '@/type'
 import { ChevronUp } from 'lucide-react'
 import { Checkbox } from '@/components/ui/checkbox'
 import { SubCategory } from './ui/sub-category'
 import { observer } from 'mobx-react-lite'
 import { panelFormStore } from '@/store/panel-form.store'
+import { toast } from 'sonner'
 
 type Props = CategoryType
 
-export const CategoryItem = observer(({ count, id, name, subCategories }: Props) => {
+export const CategoryItem = observer(({ count, name, subCategories }: Props) => {
+  const {
+    formData: { category },
+    setValue
+  } = panelFormStore
+
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleOpen = () => {
     setIsOpen(!isOpen)
   }
 
-  const {
-    formData: { category },
-    setValue
-  } = panelFormStore
-  const isSelected = subCategories.every(el => category.includes(el.id))
+  const onClick = (state: boolean) => {
+    const categoryIds = subCategories.map(el => el.id)
 
+    if (state) {
+      if (category.length >= 3) return toast('Лимит превышен!')
+
+      const mergedArray = [...category, ...categoryIds]
+
+      if (mergedArray.length <= 3) {
+        setValue('category', mergedArray)
+      } else toast('Лимит превышен!')
+    }
+
+    if (!state) {
+      setValue(
+        'category',
+        category.filter(el => !categoryIds.includes(el))
+      )
+    }
+  }
+
+  const isSelected = subCategories.every(el => category.includes(el.id))
   const mappedSubCategory = useMemo(() => subCategories.map(el => <SubCategory key={el.id} {...el} />), [])
 
   return (
@@ -41,19 +63,7 @@ export const CategoryItem = observer(({ count, id, name, subCategories }: Props)
             h-[18.0px] md:h-[8.6px] lg:h-[11.0px] xl:h-[13.8px] 2xl:h-[18.0px] ${isOpen ? 'rotate-180' : ''}`}
           />
         </div>
-        <Checkbox
-          checked={isSelected}
-          onCheckedChange={state => {
-            const categoryIds = subCategories.map(el => el.id)
-            if (state === true) setValue('category', category.concat(categoryIds))
-            else {
-              setValue(
-                'category',
-                category.filter(el => !categoryIds.includes(el))
-              )
-            }
-          }}
-        />
+        <Checkbox checked={isSelected} onCheckedChange={onClick} />
       </div>
 
       {isOpen && mappedSubCategory}
