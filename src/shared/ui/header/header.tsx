@@ -1,5 +1,6 @@
 import { Section } from '@/shared/ui/section'
 import { NavbarDesktop, NavbarMobile } from './ui/navbar'
+import Link from 'next/link'
 
 export const Header = () => {
   return (
@@ -8,11 +9,12 @@ export const Header = () => {
         <div className='flex justify-between items-center'>
           <div className='flex items-center'>
             <NavbarMobile />
-            <h2
+            <Link
+              href={'/'}
               className={`text-[24.0px] md:text-[15.4px] lg:text-[19.6px] xl:text-[24.5px] 2xl:text-[32.0px] font-bold mr-16 md:mr-[40px] lg:mr-[53px] xl:mr-[66px] 2xl:mr-25`}
             >
-              SpyQ
-            </h2>
+              <h2>SpyQ</h2>
+            </Link>
             <NavbarDesktop />
           </div>
 

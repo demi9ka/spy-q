@@ -26,7 +26,7 @@ export const City = observer(() => {
         <input
           value={city}
           onChange={e => setValue('city', e.target.value)}
-          placeholder='Введите нужный город для рассылки'
+          placeholder='Введите нужный город для поиска'
           className=' resize-none font-inter w-full outline-0 text-[15.0px] md:text-[7.7px] lg:text-[9.8px] xl:text-[12.3px] 2xl:text-[16.0px]'
           style={{ fontFamily: 'var(--font-inter-sans)' }}
         />

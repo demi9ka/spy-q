@@ -1,3 +1,5 @@
+'use client'
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 
 type Props = {
@@ -23,7 +25,7 @@ export const Question = ({ answer, question, id }: Props) => {
           </h6>
         </AccordionTrigger>
         <AccordionContent className='mt-2 mr-5 text-[14.0px] md:text-[9.6px] lg:text-[12.3px] xl:text-[15.3px] 2xl:text-[20.0px]'>
-          {answer}
+          <div dangerouslySetInnerHTML={{ __html: answer }} />
         </AccordionContent>
       </AccordionItem>
     </Accordion>

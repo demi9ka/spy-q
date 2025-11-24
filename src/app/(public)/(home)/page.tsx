@@ -6,8 +6,9 @@ import { Questions } from './ui/questions/questions'
 import { Welcome } from './ui/welcome/welcome'
 
 export const metadata: Metadata = {
-  title: 'SpyQ',
-  description: 'Описание'
+  title: 'SpyQ - AI-агент для автоматического поиска и привлечения B2B-клиентов',
+  description:
+    'SpyQ - AI-агент, который автоматически находит и привлекает B2B-клиентов. Экономит время, повышает конверсию и помогает компаниям получать больше качественных лидов.'
 }
 
 export default () => {

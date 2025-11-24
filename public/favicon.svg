@@ -1,0 +1,18 @@
+<!-- favicon-A.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#1E40AF"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+  <!-- Прозрачный прямоугольник (убрана заливка) -->
+  <rect width="32" height="32" rx="6" fill="none"/>
+  <g transform="translate(4,4)">
+    <circle cx="8" cy="8" r="8" fill="url(#g1)"/>
+    <text x="8" y="11" font-family="Segoe UI, Roboto, Arial" font-size="10" font-weight="700" text-anchor="middle" fill="#ffffff">S</text>
+    <!-- ручка лупы -->
+    <rect x="14" y="14" width="6" height="2" rx="1" transform="rotate(35 17 15)" fill="#F97316"/>
+    <circle cx="7.5" cy="7.5" r="6.5" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  </g>
+</svg>

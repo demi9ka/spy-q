@@ -4,6 +4,7 @@ import { Header } from '@/shared/ui/header'
 import { Footer } from '@/shared/ui/footer'
 import { Provider } from './provider'
 import './globals.css'
+import YandexMetrika from '@/components/ui/yandex-metrika'
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
@@ -25,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ru'>
+      <head>
+        <YandexMetrika ymid={105475790} />
+      </head>
       <body className={` ${inter.className} ${montserrat.className} bg-[var(--bg))] flex flex-col min-h-[100svh]`}>
         <Provider>
           <Header />
