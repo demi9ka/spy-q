@@ -28,11 +28,19 @@ export const Category = observer(() => {
       : null
 
   return (
-    <Container className='h-[0.0px] md:h-[134.4px] lg:h-[171.7px] xl:h-[214.7px] 2xl:h-[280.0px] overflow-y-auto'>
+    <Container className=' md:h-[134.4px] lg:h-[171.7px] xl:h-[214.7px] 2xl:h-[280.0px] overflow-y-auto'>
       {mappedCategories ? (
-        <div className='space-y-0 columns-1 md:columns-3  gap-x-[0.0px] md:gap-x-[66.2px] lg:gap-x-[84.6px] xl:gap-x-[105.8px] 2xl:gap-x-[138.0px] '>
-          {mappedCategories}
-        </div>
+        <>
+          {mappedCategories.length ? (
+            <div className='flex flex-col md:flex-row gap-x-[0.0px] md:gap-x-[66.2px] lg:gap-x-[84.6px] xl:gap-x-[105.8px] 2xl:gap-x-[138.0px]'>
+              <div className={`flex flex-col w-full  h-auto`}>{mappedCategories.slice(0, 3)}</div>
+              <div className={`flex flex-col w-full h-auto`}>{mappedCategories.slice(3, 6)}</div>
+              <div className={`flex flex-col w-full h-auto`}>{mappedCategories.slice(6, 9)}</div>
+            </div>
+          ) : (
+            <p className='text-center'>Ничего не найдено</p>
+          )}
+        </>
       ) : (
         <Skeleton className='w-full h-full' />
       )}

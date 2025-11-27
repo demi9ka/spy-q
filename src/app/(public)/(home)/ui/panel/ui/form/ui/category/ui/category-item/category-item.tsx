@@ -1,52 +1,23 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { CategoryType } from '@/type'
 import { ChevronUp } from 'lucide-react'
-import { Checkbox } from '@/components/ui/checkbox'
+
 import { SubCategory } from './ui/sub-category'
 import { observer } from 'mobx-react-lite'
-import { panelFormStore } from '@/store/panel-form.store'
-import { toast } from 'sonner'
 
 type Props = CategoryType
 
 export const CategoryItem = observer(({ count, name, subCategories }: Props) => {
-  const {
-    formData: { category },
-    setValue
-  } = panelFormStore
-
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleOpen = () => {
     setIsOpen(!isOpen)
   }
 
-  const onClick = (state: boolean) => {
-    const categoryIds = subCategories.map(el => el.id)
-
-    if (state) {
-      if (category.length >= 3) return toast('Лимит превышен!')
-
-      const mergedArray = [...category, ...categoryIds]
-
-      if (mergedArray.length <= 3) {
-        setValue('category', mergedArray)
-      } else toast('Лимит превышен!')
-    }
-
-    if (!state) {
-      setValue(
-        'category',
-        category.filter(el => !categoryIds.includes(el))
-      )
-    }
-  }
-
-  const isSelected = subCategories.every(el => category.includes(el.id))
   const mappedSubCategory = useMemo(() => subCategories.map(el => <SubCategory key={el.id} {...el} />), [])
 
   return (
-    <div className='break-inside-avoid border-b mb-[22.0px] md:mb-[10.6px] lg:mb-[13.5px] xl:mb-[16.9px] 2xl:mb-[22.0px]'>
+    <div className='border-b mb-[22.0px] md:mb-[10.6px] lg:mb-[13.5px] xl:mb-[16.9px] 2xl:mb-[22.0px]'>
       <div className='flex items-center py-[12.0px] md:py-[5.8px] lg:py-[7.4px] xl:py-[9.2px] 2xl:py-[12.0px]'>
         <div
           onClick={toggleOpen}
@@ -58,12 +29,11 @@ export const CategoryItem = observer(({ count, name, subCategories }: Props) => 
           <span className='text-black/60 font-normal text-[18.0px] md:text-[8.6px] lg:text-[11.0px] xl:text-[13.8px] 2xl:text-[18.0px]'>
             {count}
           </span>
-          <ChevronUp
-            className={`text-accent transition-transform w-[18.0px] md:w-[8.6px] lg:w-[11.0px] xl:w-[13.8px] 2xl:w-[18.0px] 
-            h-[18.0px] md:h-[8.6px] lg:h-[11.0px] xl:h-[13.8px] 2xl:h-[18.0px] ${isOpen ? 'rotate-180' : ''}`}
-          />
         </div>
-        <Checkbox checked={isSelected} onCheckedChange={onClick} />
+        <ChevronUp
+          className={`text-accent transition-transform w-[18.0px] md:w-[8.6px] lg:w-[11.0px] xl:w-[13.8px] 2xl:w-[18.0px] 
+            h-[18.0px] md:h-[8.6px] lg:h-[11.0px] xl:h-[13.8px] 2xl:h-[18.0px] ${isOpen ? 'rotate-180' : ''}`}
+        />
       </div>
 
       {isOpen && mappedSubCategory}

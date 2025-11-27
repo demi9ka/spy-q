@@ -21,7 +21,7 @@ export const Status = observer(() => {
   const isFullFilled = [city, contact, proposal].every(el => el.length > 0)
   const status = isSelectedCategory ? (isFullFilled ? 2 : 1) : 0
 
-  const volumePrice = (mailingCount * (category.length > 0 ? (category.length - 1) / 2 + 1 : 0)) / 10
+  const volumePrice = mailingCount / 10 + (category.length > 1 ? ((category.length - 1) * mailingCount) / 20 : 0)
   const isDiscount = volumePrice > 0 && mailingCount > 1000
   const volumePriceDiscount = volumePrice * 0.9
   const categoryPrice = category.length * 2
