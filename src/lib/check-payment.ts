@@ -28,7 +28,7 @@ export default async (link_?: string) => {
       clearInterval(interval)
       interval = undefined
       modalStore.openModal('mailing-start')
-      stateStore.setStatus(1)
+      stateStore.setStatus(0)
     }
   }, 6000)
 }

@@ -28,9 +28,9 @@ export const Category = observer(() => {
       : null
 
   return (
-    <Container className='h-[419.0px] md:h-[208.8px] lg:h-[266.8px] xl:h-[333.5px] 2xl:h-[435.0px] overflow-y-auto'>
+    <Container className='h-[0.0px] md:h-[134.4px] lg:h-[171.7px] xl:h-[214.7px] 2xl:h-[280.0px] overflow-y-auto'>
       {mappedCategories ? (
-        <div className='columns-1 md:columns-2 gap-x-[0.0px] md:gap-x-[66.2px] lg:gap-x-[84.6px] xl:gap-x-[105.8px] 2xl:gap-x-[138.0px]'>
+        <div className='space-y-0 columns-1 md:columns-3  gap-x-[0.0px] md:gap-x-[66.2px] lg:gap-x-[84.6px] xl:gap-x-[105.8px] 2xl:gap-x-[138.0px] '>
           {mappedCategories}
         </div>
       ) : (

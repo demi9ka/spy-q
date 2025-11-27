@@ -37,7 +37,7 @@ export const MailingFinished = observer(() => {
           className='text-center font-semibold 
             text-[24.0px] md:text-[11.5px] lg:text-[14.7px] xl:text-[18.4px] 2xl:text-[24.0px]'
         >
-          Рассылка завершена успешно
+          Процесс успешно завершен
         </h4>
         <DialogFooter
           className='flex justify-center bg-white rounded-2xl 

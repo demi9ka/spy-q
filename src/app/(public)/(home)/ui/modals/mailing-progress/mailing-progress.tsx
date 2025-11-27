@@ -27,13 +27,13 @@ export const MailingProgress = observer(() => {
           className='text-center font-semibold 
             text-[24.0px] md:text-[14.4px] lg:text-[18.4px] xl:text-[23.0px] 2xl:text-[30.0px]'
         >
-          Рассылка запущена...
+          AI-агент запущен, ожидайте завершения процесса
         </h4>
         <span
           className='font-semibold text-center
         text-[16.0px] md:text-[7.7px] lg:text-[9.8px] xl:text-[12.3px] 2xl:text-[16.0px]'
         >
-          {progress}%
+          {progress.toFixed(1)}%
         </span>
         <div
           className='relative bg-white mx-auto max-w-[90%] overflow-hidden 
@@ -50,24 +50,6 @@ export const MailingProgress = observer(() => {
             }}
           />
         </div>
-        {/* <DialogFooter
-          className='flex justify-center bg-white rounded-2xl 
-        p-[16.0px] md:p-[7.7px] lg:p-[9.8px] xl:p-[12.3px] 2xl:p-[16.0px]'
-        >
-          <button
-            onClick={onStart}
-            disabled={isPending}
-            className='cursor-pointer bg-accent font-semibold text-white
-           w-full  md:w-[180.5px] lg:w-[230.6px] xl:w-[288.3px] 2xl:w-[376.0px]
-           py-[11.0px] md:py-[5.3px] lg:py-[6.7px] xl:py-[8.4px] 2xl:py-[11.0px]
-           text-[16.0px] md:text-[7.7px] lg:text-[9.8px] xl:text-[12.3px] 2xl:text-[16.0px]
-           rounded-[16.0px] md:rounded-[7.7px] lg:rounded-[9.8px] xl:rounded-[12.3px] 2xl:rounded-[16.0px]
-          '
-          >
-            Запустить рассылку
-          </button>
-       
-        </DialogFooter> */}
       </DialogContent>
     </Dialog>
   )

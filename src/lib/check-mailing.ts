@@ -5,7 +5,7 @@ import { stateStore } from '@/store/state.store'
 let interval: NodeJS.Timeout | undefined = undefined
 export default async () => {
   if (interval) return
-  interval = setInterval(async () => {
+  const f = async () => {
     const { data, status } = await api.mailing.check({ mailingId: stateStore.mailingId! })
 
     if (status !== 200) return
@@ -14,7 +14,9 @@ export default async () => {
       clearInterval(interval)
       interval = undefined
       modalStore.openModal('mailing-finished')
-      stateStore.setStatus(3)
+      stateStore.setStatus(2)
     }
-  }, 6000)
+  }
+  f()
+  interval = setInterval(f, 6000)
 }

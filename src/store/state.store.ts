@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 
-type StatusType = 0 | 1 | 2 | 3 | null
+type StatusType = -1 | 0 | 1 | 2 | null
 
 class StateStore {
   mailingId: string | null = null

@@ -13,8 +13,8 @@ import { stateStore } from '@/store/state.store'
 import checkPayment from '@/lib/check-payment'
 
 export const Promocode = observer(() => {
-  const { closeModal, modal } = modalStore
-  const { setMailingId } = stateStore
+  const { closeModal, openModal, modal } = modalStore
+  const { setMailingId, setStatus } = stateStore
   const { formData } = panelFormStore
 
   const [value, setValue] = useState('')
@@ -31,10 +31,15 @@ export const Promocode = observer(() => {
       promocode: isPromocodeSuccess ? value : undefined,
       data: formData
     })
-    window.open(link, '_blank')
     setMailingId(id)
-    checkPayment(link)
-    closeModal()
+    if (link) {
+      window.open(link, '_blank')
+      checkPayment(link)
+      closeModal()
+    } else {
+      openModal('mailing-start')
+      setStatus(0)
+    }
   }
 
   return (
@@ -109,7 +114,7 @@ export const Promocode = observer(() => {
           <button
             onClick={sendForm}
             disabled={isPending}
-            className='cursor-pointer bg-accent font-semibold text-white
+            className='disabled:opacity-70  cursor-pointer bg-accent font-semibold text-white
            w-full  md:w-[180.5px] lg:w-[230.6px] xl:w-[288.3px] 2xl:w-[376.0px]
            py-[11.0px] md:py-[5.3px] lg:py-[6.7px] xl:py-[8.4px] 2xl:py-[11.0px]
            text-[16.0px] md:text-[7.7px] lg:text-[9.8px] xl:text-[12.3px] 2xl:text-[16.0px]

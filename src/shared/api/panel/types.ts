@@ -14,5 +14,5 @@ export type SendFormData = {
 }
 export type SendFormReponse = {
   id: string
-  link: string
+  link?: string
 }

@@ -13,6 +13,7 @@ export const Fields = observer(() => {
         Ваше предложение <span className='text-accent'>*</span>
       </h5>
       <Textarea
+        maxLength={50}
         value={formData.proposal}
         onChange={v => setValue('proposal', v.target.value)}
         placeholder='Опишите предложение'
@@ -23,6 +24,7 @@ export const Fields = observer(() => {
         Ваш контакт <span className='text-accent'>*</span>
       </h5>
       <Textarea
+        maxLength={15}
         value={formData.contact}
         onChange={v => setValue('contact', v.target.value)}
         placeholder='Укажите сайт, почту номер телефона или никнейм Telegram'

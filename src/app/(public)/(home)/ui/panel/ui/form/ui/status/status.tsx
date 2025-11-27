@@ -8,10 +8,11 @@ import { ArrowUpLeft } from 'lucide-react'
 import { observer } from 'mobx-react-lite'
 
 const statusTitle: string[] = ['Выберите категории', 'Заполните поля и выберите город', 'Оплатить и запустить рассылку']
-const malingStatusTitle: string[] = ['Оплатить', 'Запустить рассылку', 'Наблюдать', 'Результат']
+const malingStatusTitle: string[] = ['Открыть', 'Наблюдать', 'Результат']
 
 export const Status = observer(() => {
   const { openModal } = modalStore
+
   const { mailingId, status: mailingStatus } = stateStore
   const { formData } = panelFormStore
   const { category, city, contact, proposal, mailingCount } = formData
@@ -19,7 +20,13 @@ export const Status = observer(() => {
   const isSelectedCategory = category.length > 0
   const isFullFilled = [city, contact, proposal].every(el => el.length > 0)
   const status = isSelectedCategory ? (isFullFilled ? 2 : 1) : 0
-  const price = mailingCount / 10 + category.length * 2
+
+  const volumePrice = (mailingCount * (category.length > 0 ? (category.length - 1) / 2 + 1 : 0)) / 10
+  const isDiscount = volumePrice > 0 && mailingCount > 1000
+  const volumePriceDiscount = volumePrice * 0.9
+  const categoryPrice = category.length * 2
+
+  const finalPrice = (isDiscount ? volumePriceDiscount : volumePrice) + categoryPrice
 
   const onPress = () => {
     if (mailingId) {
@@ -55,7 +62,7 @@ export const Status = observer(() => {
         <div>
           {status == 2 && (
             <span className='text-white font-semibold md:font-bold text-[20.0px] md:text-[15.4px] lg:text-[19.6px] xl:text-[24.5px] 2xl:text-[32.0px] '>
-              {price}$
+              {finalPrice}$
             </span>
           )}
         </div>

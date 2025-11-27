@@ -1,23 +1,12 @@
-# Стадия сборки
-FROM node:18-alpine AS builder
+FROM node:20.9.0-alpine
 
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --omit=dev
 
-COPY . .
-RUN npm run build
-
-# Финальная стадия
-FROM node:18-alpine
-
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm ci --only=production
-
-COPY --from=builder /app/.next ./.next
+COPY .next /app/.next
+COPY public /app/public
 
 
 CMD ["npm", "run", "start"]

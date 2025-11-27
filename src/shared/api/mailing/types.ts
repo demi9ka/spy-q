@@ -10,11 +10,15 @@ export type CheckResponse = {
   progress: number
   result: false
 }
-export type StatusReponse = {
-  status: 0 | 1 | 2 | 3
-}
+export type StatusReponse =
+  | {
+      status: 0
+      isPaymented: boolean
+    }
+  | {
+      status: 1 | 2
+    }
 
-//0 - ожидаем оплаты
-//1 - оплата прошла, модалка с кнопкой старта
-//2 - процесс рассылки
-//3 - завершено
+//0 - ожидаем или модалка с кнопкой старта если isPaymenteed:true
+//1 - процесс рассылки
+//2 - завершено

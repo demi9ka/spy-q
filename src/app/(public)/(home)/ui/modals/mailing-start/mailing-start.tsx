@@ -17,7 +17,7 @@ export const MailingStart = observer(() => {
     const { result } = await mutateAsync({ mailingId: mailingId! })
     if (!result) return
     openModal('mailing-progress')
-    setStatus(2)
+    setStatus(1)
     checkMailing()
   }
 
@@ -47,7 +47,7 @@ export const MailingStart = observer(() => {
           <button
             onClick={onStart}
             disabled={isPending}
-            className='cursor-pointer bg-accent font-semibold text-white
+            className='disabled:opacity-70 cursor-pointer bg-accent font-semibold text-white
            w-full  md:w-[180.5px] lg:w-[230.6px] xl:w-[288.3px] 2xl:w-[376.0px]
            py-[11.0px] md:py-[5.3px] lg:py-[6.7px] xl:py-[8.4px] 2xl:py-[11.0px]
            text-[16.0px] md:text-[7.7px] lg:text-[9.8px] xl:text-[12.3px] 2xl:text-[16.0px]

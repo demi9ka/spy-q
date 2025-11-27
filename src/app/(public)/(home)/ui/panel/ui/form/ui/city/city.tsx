@@ -24,6 +24,7 @@ export const City = observer(() => {
       >
         <MapPin className='text-accent size-[24.0px] md:size-[11.5px] lg:size-[14.7px] xl:size-[18.4px] 2xl:size-[24.0px]' />
         <input
+          maxLength={20}
           value={city}
           onChange={e => setValue('city', e.target.value)}
           placeholder='Введите нужный город для поиска'
