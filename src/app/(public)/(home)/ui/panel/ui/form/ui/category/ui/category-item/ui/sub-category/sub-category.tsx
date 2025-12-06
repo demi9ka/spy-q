@@ -16,6 +16,7 @@ export const SubCategory = observer(({ id, name }: Props) => {
 
     if (state === true) {
       if (category.length == 3) return toast('Превышен лимит!')
+      if (category.length == 2) toast('Внимание! Это увеличит время работы AI-агента')
       setValue('category', [...category, id])
     } else {
       setValue(

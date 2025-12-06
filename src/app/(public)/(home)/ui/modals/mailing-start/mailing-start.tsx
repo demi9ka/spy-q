@@ -7,9 +7,11 @@ import { useStartMailing } from '@/entities/mailing/use-start-mailing'
 import { CheckCheck } from 'lucide-react'
 import { stateStore } from '@/store/state.store'
 import checkMailing from '@/lib/check-mailing'
+import { panelFormStore } from '@/store/panel-form.store'
 
 export const MailingStart = observer(() => {
   const { mailingId, setStatus } = stateStore
+  const { clearForm } = panelFormStore
   const { openModal, modal, closeModal } = modalStore
   const { mutateAsync, isPending } = useStartMailing()
 
@@ -19,6 +21,7 @@ export const MailingStart = observer(() => {
     openModal('mailing-progress')
     setStatus(1)
     checkMailing()
+    clearForm()
   }
 
   return (
@@ -54,7 +57,7 @@ export const MailingStart = observer(() => {
            rounded-[16.0px] md:rounded-[7.7px] lg:rounded-[9.8px] xl:rounded-[12.3px] 2xl:rounded-[16.0px]
           '
           >
-            Запустить рассылку
+            Запустить агента
           </button>
           <DialogClose asChild></DialogClose>
         </DialogFooter>

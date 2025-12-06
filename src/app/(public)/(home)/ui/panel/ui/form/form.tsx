@@ -7,19 +7,27 @@ import { Fields } from './ui/fields'
 import { Mailings } from './ui/mailings'
 import { Status } from './ui/status'
 import restore from '@/lib/restore'
+import { panelFormStore } from '@/store/panel-form.store'
+import { observer } from 'mobx-react-lite'
 
-export const Form = () => {
+export const Form = observer(() => {
   useEffect(() => {
     restore()
   }, [])
+
+  const lgSize = panelFormStore.formData.category.length > 1
 
   return (
     <div className='mt-[32.0px] md:mt-[17.3px] lg:mt-[22.1px] xl:mt-[27.6px] 2xl:mt-[36.0px]'>
       <Category />
       <div
-        className='grid grid-cols-1 md:grid-cols-3 md:h-[151.7px] lg:h-[193.8px] xl:h-[242.3px] 2xl:h-[316.0px]
+        className={`grid grid-cols-1 md:grid-cols-3 ${
+          lgSize
+            ? 'md:h-[186.2px] lg:h-[238.0px] xl:h-[297.5px] 2xl:h-[388.0px]'
+            : 'md:h-[151.7px] lg:h-[193.8px] xl:h-[242.3px] 2xl:h-[316.0px]'
+        }
         mt-[28.0px] md:mt-[13.4px] lg:mt-[17.2px] xl:mt-[21.5px] 2xl:mt-[28.0px] 
-        gap-x-[0px] gap-y-[28px] md:gap-x-[13.4px] lg:gap-x-[17.2px] xl:gap-x-[21.5px] 2xl:gap-x-[28.0px]'
+        gap-x-[0px] gap-y-[28px] md:gap-x-[13.4px] lg:gap-x-[17.2px] xl:gap-x-[21.5px] 2xl:gap-x-[28.0px]`}
       >
         <Fields />
         <Mailings />
@@ -30,4 +38,4 @@ export const Form = () => {
       </div>
     </div>
   )
-}
+})

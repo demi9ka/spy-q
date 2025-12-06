@@ -18,9 +18,6 @@ export const NavbarDesktop = () => {
             FAQ
           </Link>
         </li>
-        <li>
-          <Link href='/privacy'>Политика конфиденциальности</Link>
-        </li>
       </ul>
     </nav>
   )

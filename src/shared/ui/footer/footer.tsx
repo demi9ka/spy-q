@@ -13,10 +13,17 @@ export const Footer = () => {
               SpyQ
             </h2>
           </Link>
-
-          <span className='text-[18px] md:text-[8.6px] lg:text-[10.6px] xl:text-[12.0px] 2xl:text-[18px]'>
-            © 2025 SpyQ. Все права защищены.
-          </span>
+          <div className='flex items-center flex-col md:flex-row gap-[20.0px] md:gap-[9.6px] lg:gap-[12.3px] xl:gap-[15.3px] 2xl:gap-[20.0px]'>
+            <Link
+              href='/privacy'
+              className='underline text-[16.0px] md:text-[7.7px] lg:text-[9.8px] xl:text-[12.3px] 2xl:text-[16.0px]'
+            >
+              Политика конфиденциальности
+            </Link>
+            <span className='text-[18px] md:text-[8.6px] lg:text-[10.6px] xl:text-[12.0px] 2xl:text-[18px]'>
+              © 2025 SpyQ. Все права защищены.
+            </span>
+          </div>
         </div>
       </Section>
     </footer>

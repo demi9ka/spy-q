@@ -5,6 +5,7 @@ const initialFormData: FormDataType = {
   proposal: '',
   contact: '',
   mailingCount: 1000,
+
   city: '',
   category: []
 }
@@ -26,7 +27,10 @@ class PanelFormStore {
   }
 
   setValue = <K extends keyof FormDataType>(fieldName: K, value: any) => {
-    if (fieldName == 'category') value = [...new Set(value)]
+    if (fieldName == 'category') {
+      value = [...new Set(value)]
+      // this.formData.mailingCount = this.formData.defaultMailingCount * value.length
+    }
 
     this.formData[fieldName] = value
   }

@@ -17,7 +17,7 @@ export const NavbarMobile = () => {
     <DropdownMenu onOpenChange={state => setIsOpened(state)}>
       <DropdownMenuTrigger className='md:hidden '>
         <Menu
-          className='size-6 mr-4  transition-transform duration-200'
+          className='size-6 mr-4   transition-transform duration-200'
           style={{
             rotate: `${isOpened ? 90 : 0}deg`
           }}
@@ -26,7 +26,7 @@ export const NavbarMobile = () => {
       <DropdownMenuContent className='text-md mt-6 ml-2'>
         <nav>
           <ul>
-            <DropdownMenuItem>
+            <DropdownMenuItem className='w-[200px]'>
               <li>
                 <Link href={'/#panel'}> Категории</Link>
               </li>
@@ -38,11 +38,11 @@ export const NavbarMobile = () => {
               </li>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            {/* <DropdownMenuItem>
               <li>
                 <Link href={'/privacy'}>Политика конфиденциальности</Link>
               </li>
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
           </ul>
         </nav>
       </DropdownMenuContent>

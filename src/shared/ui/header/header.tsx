@@ -19,9 +19,13 @@ export const Header = () => {
           </div>
 
           <div className='flex items-center'>
-            <button className='py-[7px] md:py-[4.4px] lg:py-[5.8px] xl:py-[7.33px] 2xl:py-[11px] rounded-[16px] md:rounded-[6.4px] lg:rounded-[8.533px] xl:rounded-[10.6px] 2xl:rounded-[16px]  bg-white text-accent font-semibold w-43 md:w-20 lg:w-26 xl:w-33 2xl:w-50  text-[16px] md:text-[8px] lg:text-[10.6px] xl:text-sm 2xl:text-[20px]'>
+            <a
+              href='https://t.me/spyqnet'
+              target='_blank'
+              className='text-center py-[7px] md:py-[4.4px] lg:py-[5.8px] xl:py-[7.33px] 2xl:py-[11px] rounded-[16px] md:rounded-[6.4px] lg:rounded-[8.533px] xl:rounded-[10.6px] 2xl:rounded-[16px]  bg-white text-accent font-semibold w-43 md:w-20 lg:w-26 xl:w-33 2xl:w-50  text-[16px] md:text-[8px] lg:text-[10.6px] xl:text-sm 2xl:text-[20px]'
+            >
               Поддержка
-            </button>
+            </a>
           </div>
         </div>
       </Section>

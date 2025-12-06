@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+// import type { Metadata } from 'next'
 import { Inter, Montserrat } from 'next/font/google'
 import { Header } from '@/shared/ui/header'
 import { Footer } from '@/shared/ui/footer'
@@ -26,15 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ru'>
-      <head>
-        <YandexMetrika ymid={105475790} />
-      </head>
       <body className={` ${inter.className} ${montserrat.className} bg-[var(--bg))] flex flex-col min-h-[100svh]`}>
         <Provider>
           <Header />
           <main className='flex-grow flex-shrink-0 basis-auto '>{children}</main>
           <Footer />
         </Provider>
+        <YandexMetrika />
       </body>
     </html>
   )

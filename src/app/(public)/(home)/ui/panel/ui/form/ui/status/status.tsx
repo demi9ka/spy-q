@@ -7,7 +7,7 @@ import { stateStore } from '@/store/state.store'
 import { ArrowUpLeft } from 'lucide-react'
 import { observer } from 'mobx-react-lite'
 
-const statusTitle: string[] = ['Выберите категории', 'Заполните поля и выберите город', 'Оплатить и запустить рассылку']
+const statusTitle: string[] = ['Выберите категории', 'Заполните поля и выберите город', 'Оплатить и запустить агента']
 const malingStatusTitle: string[] = ['Открыть', 'Наблюдать', 'Результат']
 
 export const Status = observer(() => {
@@ -24,9 +24,7 @@ export const Status = observer(() => {
   const volumePrice = mailingCount / 10 + (category.length > 1 ? ((category.length - 1) * mailingCount) / 20 : 0)
   const isDiscount = volumePrice > 0 && mailingCount > 1000
   const volumePriceDiscount = volumePrice * 0.9
-  const categoryPrice = category.length * 2
-
-  const finalPrice = (isDiscount ? volumePriceDiscount : volumePrice) + categoryPrice
+  const finalPrice = isDiscount ? volumePriceDiscount : volumePrice
 
   const onPress = () => {
     if (mailingId) {

@@ -7,17 +7,41 @@ import { cn } from '@/lib/utils'
 
 const Slider = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
->(({ className, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & { mailingCount: number }
+>(({ className, mailingCount, ...props }, ref) => (
   <SliderPrimitive.Root
     ref={ref}
     className={cn('relative flex w-full touch-none select-none items-center', className)}
     {...props}
   >
-    <SliderPrimitive.Track className='relative h-[20.0px] md:h-[9.6px]  lg:h-[12.3px] xl:h-[15.3px] 2xl:h-[20.0px] w-full grow overflow-hidden rounded-full bg-primary/10'>
-      <SliderPrimitive.Range className='absolute h-full bg-accent' />
+    <SliderPrimitive.Track className='relative  h-[20.0px] md:h-[9.6px]  lg:h-[12.3px] xl:h-[15.3px] 2xl:h-[20.0px] w-full grow overflow-hidden rounded-full bg-primary/10'>
+      <SliderPrimitive.Range className='absolute h-full bg-accent transition-all rounded-xl' />
     </SliderPrimitive.Track>
-    <SliderPrimitive.Thumb className='border-white block size-[28.0px] md:size-[13.4px] lg:size-[17.2px] xl:size-[21.5px] 2xl:size-[28.0px] rounded-full border  bg-accent shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50' />
+    <div
+      style={{
+        backgroundColor: mailingCount >= 500 ? '#0d47a1' : '#999999'
+      }}
+      className='absolute left-[0%] translate-x-[0%] border-white block size-[28.0px] md:size-[13.4px] lg:size-[17.2px] xl:size-[21.5px] 2xl:size-[28.0px] rounded-full border   shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
+    />
+    <div
+      style={{
+        backgroundColor: mailingCount >= 1000 ? '#0d47a1' : '#999999'
+      }}
+      className='absolute left-[33.333%] translate-x-[-30%] border-white block size-[28.0px] md:size-[13.4px] lg:size-[17.2px] xl:size-[21.5px] 2xl:size-[28.0px] rounded-full border  shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
+    />
+    <div
+      style={{
+        backgroundColor: mailingCount >= 1500 ? '#0d47a1' : '#999999'
+      }}
+      className='absolute left-[66.666%] translate-x-[-70%]  border-white block size-[28.0px] md:size-[13.4px] lg:size-[17.2px] xl:size-[21.5px] 2xl:size-[28.0px] rounded-full border   shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
+    />
+    <div
+      style={{
+        backgroundColor: mailingCount >= 2000 ? '#0d47a1' : '#999999'
+      }}
+      className='absolute left-[100%] translate-x-[-100%] border-white block size-[28.0px] md:size-[13.4px] lg:size-[17.2px] xl:size-[21.5px] 2xl:size-[28.0px] rounded-full border   shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
+    />
+    {/* <SliderPrimitive.Thumb className='border-white block size-[28.0px] md:size-[13.4px] lg:size-[17.2px] xl:size-[21.5px] 2xl:size-[28.0px] rounded-full border bg-accent  shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50' /> */}
   </SliderPrimitive.Root>
 ))
 Slider.displayName = SliderPrimitive.Root.displayName
