@@ -9,4 +9,4 @@ coverage
 dist
 *.ts
 !*.d.ts
-Dockerfile
+//Dockerfile

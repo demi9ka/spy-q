@@ -10,20 +10,21 @@ export default async () => {
 
   stateStore.setMailingId(mailingId)
 
-  const { data, status: responseStatus } = await api.mailing.status({ mailingId })
+  try {
+    const { data, status: responseStatus } = await api.mailing.status({ mailingId })
+    stateStore.setStatus(data.status)
 
-  if (responseStatus !== 200) return
-
-  stateStore.setStatus(data.status)
-
-  if (data.status == 0) {
-    if (data.isPaymented) {
-      modalStore.openModal('mailing-start')
-    } else {
-      checkPayment()
-    }
-  } else if (data.status == 1) {
-    checkMailing()
-    modalStore.openModal('mailing-progress')
-  } else if (data.status == 2) modalStore.openModal('mailing-finished')
+    if (data.status == 0) {
+      if (data.isPaymented) {
+        modalStore.openModal('mailing-start')
+      } else {
+        checkPayment()
+      }
+    } else if (data.status == 1) {
+      checkMailing()
+      modalStore.openModal('mailing-progress')
+    } else if (data.status == 2) modalStore.openModal('mailing-finished')
+  } catch (e) {
+    return localStorage.removeItem('mailingId')
+  }
 }
